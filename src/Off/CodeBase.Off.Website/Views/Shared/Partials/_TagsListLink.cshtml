@@ -1,0 +1,21 @@
+﻿@using CodeBase.Common.Web.UI
+@model IList<CodeBase.Off.Website.Models.TagShowModel>
+@if (Model.Any()) {
+    for (var i = 0; i < Model.Count; i++) {
+        var tag = Model[i];
+        var isLastItem = Html.IsLastItem(i,
+                                         Model.Count);
+
+        @Html.ActionLink(tag.Title,
+                         "ByTag",
+                         "Blog",
+                         new {
+                                 tag.Slug
+                         },
+                         null)
+
+        if (!isLastItem) {
+            @:، 
+        }
+    }
+}

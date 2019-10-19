@@ -1,0 +1,62 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Common.Web.UI
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@{
+    var emptyTemplate = ViewData["EmptyTemplate"] as string;
+}
+@if (Model.Any()) {
+    for (var i = 0; i < Model.Count; i++) {
+        var entry = Model[i];
+        var isRowStart = Html.IsRowStart(i,
+                                         3);
+        var isRowEnd = Html.IsRowEnd(i,
+                                     3);
+        var isLastRow = Html.IsLastRow(i,
+                                       Model.Count,
+                                       3);
+        var isMiddleColumn = Html.IsMiddleColumn(i,
+                                                 3);
+
+        if (isRowStart) {
+            @:<section class="row clearfix @Html.If(isLastRow,
+                                                    "no-bottom-margin")">
+        }
+        <article class="col @Html.If(isMiddleColumn,
+                                     "mid")">
+            <h2>
+                @Html.ActionLink(entry.Title,
+                                 "Show",
+                                 "Entry",
+                                 new {
+                                         entry.CreateDate.Year,
+                                         entry.CreateDate.Month,
+                                         entry.CreateDate.Day,
+                                         entry.Slug
+                                 },
+                                 null)
+            </h2>
+            @Html.Partial("Partials/_EntryMetadata",
+                          entry)
+            @Html.Raw(entry.Abstract)
+            @Html.ActionLink("» ادامه",
+                             "Show",
+                             "Entry",
+                             new {
+                                     entry.CreateDate.Year,
+                                     entry.CreateDate.Month,
+                                     entry.CreateDate.Day,
+                                     entry.Slug
+                             },
+                             new {
+                                     @class = "more"
+                             })
+        </article>
+
+        @Html.If(isRowEnd,
+                 "</section>")
+    }
+} else {
+    <section class="row clearfix no-bottom-margin">
+        @Html.Partial(emptyTemplate)
+    </section>
+}

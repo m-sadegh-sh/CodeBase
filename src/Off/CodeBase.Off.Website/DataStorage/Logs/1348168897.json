@@ -1,0 +1,13 @@
+{
+  "Id": 1348168897,
+  "Level": 3,
+  "LogDateUtc": "2012-09-20T19:21:37.8571713Z",
+  "RawUrl": null,
+  "ReferrerUrl": null,
+  "IpInfo": null,
+  "Params": null,
+  "Action": null,
+  "UserInfo": null,
+  "Message": "An error occured when sending a message",
+  "Exception": "Message: Failure sending mail.\r\nSource: System\r\nTargetSite: Void Send(System.Net.Mail.MailMessage)\r\nStackTrace:    at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at CodeBase.Off.Core.Utilities.MessageService.SendEmail(MailMessage message, MailAccountConfig accountConfig) in d:\\Projects\\CodeBase\\Off\\CodeBase.Off.Core\\Utilities\\MessageService.cs:line 54\r\n"
+}

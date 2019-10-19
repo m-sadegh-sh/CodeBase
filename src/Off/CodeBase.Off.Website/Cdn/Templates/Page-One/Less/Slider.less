@@ -1,0 +1,99 @@
+.slider-wrapper {
+    float: left;
+    height: 234px;
+    margin: 0 0 13px 32px;
+    position: relative;
+    width: 460px;
+}
+
+    .slider-wrapper #slider {
+        height: 230px;
+        right: 2px;
+        position: absolute;
+        top: 2px;
+        width: 456px;
+    }
+
+    .slider-wrapper .nivoSlider {
+        .image('loading.gif', no-repeat 50% 50%);
+        position: relative;
+    }
+
+        .slider-wrapper .nivoSlider img {
+            display: none;
+            right: 0px;
+            position: absolute;
+            top: 0px;
+        }
+
+        .slider-wrapper .nivoSlider a {
+            border: 0;
+            display: block;
+        }
+
+    .slider-wrapper .nivo-controlNav {
+        bottom: -45px;
+        right: 50%;
+        margin-right: -30px;
+        position: absolute;
+    }
+
+        .slider-wrapper .nivo-controlNav a {
+            .templateImage('bullets.png', no-repeat);
+            border: 0;
+            display: block;
+            float: right;
+            height: 14px;
+            margin-left: 10px;
+            text-indent: -9999px;
+            width: 13px;
+        }
+
+            .slider-wrapper .nivo-controlNav a.active {
+                background-position: 0 -14px;
+            }
+
+    .slider-wrapper .nivo-directionNav a {
+        .templateImage('arrows.png', no-repeat);
+        border: 0;
+        display: block;
+        height: 52px;
+        text-indent: -9999px;
+        width: 33px;
+        top: 50%;
+        margin-top: -26px;
+    }
+
+    .slider-wrapper a.nivo-nextNav {
+        left: -51px;
+        right: auto;
+    }
+
+    .slider-wrapper a.nivo-prevNav {
+        background-position: -33px 0;
+        right: -51px;
+    }
+
+    .slider-wrapper .nivo-caption {
+        font: 16px #444;
+        padding: 5px 10px;
+        text-align: center;
+        .text-shadow(none);
+        width: 436px;
+        .text-shadow(-1px 1px 0 rgba(255, 255, 255, .5));
+    }
+
+        .slider-wrapper .nivo-caption p {
+            color: #DDD;
+            .text-shadow(-1px 1px 1px #414141);
+        }
+
+        .slider-wrapper .nivo-caption a {
+            color: #66CC33;
+            padding: 0;
+            background: none;
+        }
+
+            .slider-wrapper .nivo-caption a:hover {
+                color: #fff;
+            }

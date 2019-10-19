@@ -1,0 +1,19 @@
+{
+  "Id": 1347910419,
+  "Level": 3,
+  "LogDateUtc": "2012-09-17T19:33:39.9129576Z",
+  "RawUrl": "/contact-us",
+  "ReferrerUrl": "http://localhost:13055/contact-us",
+  "IpInfo": "Remote: ::1, Local: 192.168.1.10",
+  "Params": {
+    "__RequestVerificationToken": "L1H-sRopPy34QqQk1Pgbt4bm70Cr9_C96kC0rgcRwBCGstndMxfgEVqPfbEznRvxgl6DK8G5JS1yGzbdlAwzNTB0lY7FykqbUwskcybawF01,D0-QY_GO-OijgB2a7vsu_Wp1v4LfxTNXhjzaKLVVlrM45VxBggFqqz1bi50-ygM4A4VTMjtWU13i243Q0j5bfLKp2HPx-EEp056RkJh2oKA1",
+    "ASP.NET_SessionId": "5zzn1b2mm320lzfeo5iyhxeq",
+    "SenderName": "gh",
+    "SenderEmail": "lkj@gg.vv",
+    "Message": "h"
+  },
+  "Action": null,
+  "UserInfo": "--- (---)",
+  "Message": "An error occured when sending a message",
+  "Exception": "Message: Failure sending mail.\r\nSource: System\r\nTargetSite: Void Send(System.Net.Mail.MailMessage)\r\nStackTrace:    at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at CodeBase.Off.Core.Utilities.MessageService.SendEmail(MailMessage message) in d:\\Projects\\CodeBase\\Off\\CodeBase.Off.Core\\Utilities\\MessageService.cs:line 17\r\n"
+}

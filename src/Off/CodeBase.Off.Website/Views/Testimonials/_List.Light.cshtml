@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CodeBase.Off.Website.Models.TestimonialShowModel>
+@if (Model.Any()) {
+    <section class="fancy-box">
+        <h3 class="fancy-title">ذهنیت شما از ما</h3>
+        <div class="testimonials">
+            @foreach (var testimonial in Model) {
+                <blockquote>
+                    @Html.Raw(testimonial.Text)
+                    <cite>&mdash; @Html.ActionLink(testimonial.FriendlyName,
+                                                   "RedirectTo",
+                                                   new {
+                                                           testimonial.Slug
+                                                   },
+                                                   new {
+                                                           alt = testimonial.Alt,
+                                                           rel = "tooltip",
+                                                           data_placement = "right",
+                                                           title = testimonial.Alt
+                                                   })</cite>
+                </blockquote>
+            }
+        </div>
+    </section>
+}

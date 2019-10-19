@@ -1,0 +1,55 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@{
+    Layout = "_BlogLayout.cshtml";
+
+    var year = (int) ViewBag.Year;
+    var month = ViewBag.Month as int?;
+    var day = ViewBag.Day as int?;
+
+    var date = string.Join("/",
+                           year,
+                           month,
+                           day).
+                      TrimEnd('/');
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(string.Format("نوشته‌های ”{0}“",
+                                  date));
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.SetCanonicalUrl(Url.Action(new {
+            year,
+            month,
+            day
+    }));
+    layout.AddBreadcrumb(Html.ActionLink(string.Format("نوشته‌های ”{0}“",
+                                                       date),
+                                         new {
+                                                 year,
+                                                 month,
+                                                 day
+                                         },
+                                         CurrentMode.All));
+}
+@section Metas
+{
+    <link href="@Url.Action("ByDate",
+                            "Feed",
+                            new {
+                                    year,
+                                    month,
+                                    day
+                            })" title="خوراک نوشته‌های ”@date“" rel="alternate" type="application/rss+xml" />
+}
+<h1>نوشته‌های ”@date“</h1>
+<section class="primary">
+    @{ Html.RenderPartial("_Entries.List",
+                          Model,
+                          new ViewDataDictionary {
+                                  {"EmptyTemplate", "Partials/NoMatch"}
+                          }); }
+</section>

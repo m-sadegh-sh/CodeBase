@@ -1,0 +1,22 @@
+﻿@model CodeBase.Off.Website.Models.EntrySummaryModel
+<div class="metadata">
+    @Html.DisplayFor(esm => Model.CreateDate,
+                     new {
+                             Pretty = Model.PrettyCreateDate
+                     })
+    توسط @Html.ActionLink(Model.Author.FirstName,
+                          "ByAuthor",
+                          "Blog",
+                          new {
+                                  Model.Author.User.UserName
+                          },
+                          new {
+                                  rel = "popover",
+                                  title = Model.Author.FullName,
+                                  data_content = Model.Author.Position
+                          })
+    @if (Model.Tags.Any()) {
+        @:در @Html.Partial("Partials/_TagsListLink",
+                           Model.Tags)
+    }
+</div>

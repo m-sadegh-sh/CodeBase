@@ -1,0 +1,12 @@
+﻿@model CodeBase.Off.Core.Domain.TeamMember
+<div class="fancy-box">
+    <h3 class="fancy-title">دریافت رزومه من</h3>
+    <p>
+        دوستان شما می تونید در صورت تمایل نسخه PDF رزومه من رو از طریق لینک زیر دریافت کنید.
+    </p>
+    @Html.ActionLink("دانلود PDF", "DownloadResume", new {
+        Model.Slug
+    }, new {
+        @class = "button block"
+    })
+</div>

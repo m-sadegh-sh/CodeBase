@@ -1,0 +1,51 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@functions {
+
+    private static ICollection<KeyValuePair<string, List<string>>> GetNotifications(IEnumerable<KeyValuePair<string, object>> dictionary) {
+        return dictionary.Where(kvp => kvp.Key.StartsWith("notifications."))
+            .Select(kvp => new KeyValuePair<string, List<string>>(kvp.Key.Replace("notifications.", ""),
+                                                                  kvp.Value as List<string>)).ToList();
+    }
+
+    private static string GetNotificationTitle(string notificationKey) {
+        switch (notificationKey) {
+            case "Info":
+                return "جزئیات";
+            case "Success":
+                return "تبریک میگیم";
+            case "Warning":
+                return "مراقب باش";
+            default:
+                return "ای بابا";
+        }
+    }
+
+}
+
+@{
+    var notifications = GetNotifications(TempData);
+
+    foreach (var notification in GetNotifications(ViewData)) {
+        notifications.Add(notification);
+    }
+}
+@if (notifications.Any()) {
+    <div class="alerts">
+        @foreach (var notification in notifications) {
+            var isSingle = notification.Value.Count == 1;
+            <div class="alert @Html.If(!isSingle, "alert-block") alert-@notification.Key.ToLowerInvariant()">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h3>@GetNotificationTitle(notification.Key)!</h3>
+                @if (isSingle) {
+                    @notification.Value.Single()
+                } else {
+                    <ul>
+                        @foreach (var message in notification.Value) {
+                            <li>@message</li>
+                        }
+                    </ul>
+                }
+            </div>
+        }
+    </div>
+}

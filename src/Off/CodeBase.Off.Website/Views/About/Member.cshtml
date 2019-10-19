@@ -1,0 +1,50 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Off.Website.Extensions
+@model CodeBase.Off.Core.Domain.TeamMember
+
+@{
+    Layout = "_AboutLayout.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(Model.FullName);
+    layout.AddTitle(Model.Position);
+    layout.AddKeywords("");
+    layout.AddDescription(Model.FullName + ", " + Model.Position);
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+<section class="about-us clearfix">
+    <h1>
+        @Model.FullName
+        <span class="metadata">(@Model.Position)
+        </span>
+    </h1>
+    <div class="primary">
+        <div class="row clearfix">
+            <div class="large-thumbnail box">
+                <a href="@Url.Action("Member", new {
+                             Model.
+                         })">
+                    <img class="member-image" alt="@(Model.FullName + ", " + Model.Position)" title="@(Model.FullName + ", " + Model.Position)" src="@Url.MemberImageUrl(Model.Slug, false)" width="200" height="188">
+                </a>
+            </div>
+            @Html.Raw(Model.Biography)
+            @Html.ActionLink(string.Format("نوشته‌های {0}", Model.FirstName), "ByAuthor", "Blog", new {
+                Model.Slug
+            }, new {
+                @class = "more"
+            })
+        </div>
+        <h2>دیگر اعضای تیم...</h2>
+        @{ Html.RenderAction("Members", new {
+               Model.Slug
+           }); }
+    </div>
+    <aside>
+        @Html.Partial("_MemberResume", Model)
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

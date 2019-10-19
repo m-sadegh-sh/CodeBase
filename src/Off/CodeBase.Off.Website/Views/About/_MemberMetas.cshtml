@@ -1,0 +1,23 @@
+﻿@using CodeBase.Common.Infrastructure.Application
+@using CodeBase.Off.Website.Helpers
+@model CodeBase.Off.Website.Models.TeamMemberShowModel
+
+<section class="fancy-box">
+    <h3 class="fancy-title">
+        در یک نگاه
+    </h3>
+    <p>
+        <b>@Model.FirstName</b> در حال حاضر به عنوان <i>@Model.Position</i> در کدبیس فعالیت می کنه
+        @if (Model.User.EntriesCount > 0) {
+            <text>و تا بحال <i>@Model.User.EntriesCount</i> نوشته ارسال کرده که شما میتونید 
+                @Html.ShowLink(Model.User,
+                               "اینجا")
+                پیداشون کنید.</text>
+        } else {
+            <text>.</text>
+        }
+    </p>
+    <p>
+        در صورت لزوم می تونید از طریق پست الکترونیک <i>@Model.PublicEmail.ToProtectedEmail()</i> باهاش در ارتباط باشید.
+    </p>
+</section>

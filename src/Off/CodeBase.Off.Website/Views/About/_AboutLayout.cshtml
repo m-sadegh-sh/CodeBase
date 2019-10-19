@@ -1,0 +1,15 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@{
+    Layout = "~/Views/Shared/Layouts/_LayoutBase.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("درباره ما");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+@RenderBody()

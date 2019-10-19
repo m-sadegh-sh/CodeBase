@@ -1,0 +1,53 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Common.Web.Mvc.Layout
+@model CodeBase.Off.Website.Models.SubscriptionRequestModel
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("عضویت در خبرنامه");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.SetCanonicalUrl(Url.Action(true));
+    layout.AddBreadcrumb(Html.ActionLink("عضویت در خبرنامه",
+                                         CurrentMode.All));
+}
+<section class="subscriptions clearfix">
+    <h1>عضویت در خبرنامه</h1>
+    <article class="primary">
+        <p class="intro">
+            شما با ثبت ایمیلتون، می تونین مطالب ارسالی اعضای کدبیس رو بصورت خبرنامه دریافت کنید.
+        </p>
+        <p class="tips">
+            در صورتی که ایمیل فعال‌سازی رو هنوز دریافت نکردی می تونی از فرم زیر برای ارسال مجدد اون استفاده کنی.
+        </p>
+        @using (Html.BeginForm(FormMethod.Post,
+                               new {
+                                       id = "subscription-form",
+                                       @class = "fancy-box"
+                               })) {
+            @Html.AntiForgeryToken()
+            @Html.Then()
+            <p>
+                لطفا پست الکترونیکی خودتون رو در فیلد ذیل وارد کنید.
+            </p>
+            <div>
+                @Html.LabelFor(srm => srm.Email)
+                @Html.EditorFor(srm => srm.Email)
+                @Html.ValidationMessageFor(srm => srm.Email)
+            </div>
+            <div class="actions">
+                <input class="button" type="submit" value="عضویت" />
+            </div>
+        }
+    </article>
+    <aside>
+        @{ Html.RenderAction("List",
+                             "Tags",
+                             new {
+                                     IsLight = true
+                             }); }
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

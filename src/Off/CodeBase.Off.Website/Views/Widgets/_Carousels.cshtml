@@ -1,0 +1,17 @@
+﻿@using CodeBase.Off.Website.Extensions
+@model IList<CodeBase.Off.Core.Domain.Carousel>
+@if (Model.Any()) {
+    <div class="slider-wrapper box">
+        <div id="slider" class="nivoSlider">
+            @foreach (var carousel in Model) {
+                <img src="@Url.CarouselImageUrl(carousel.Id)" width="230" height="513"
+                     alt="@carousel.Description" title="#caption-@carousel.Id" />
+            }
+        </div>
+        @foreach (var carousel in Model) {
+            <div id="caption-@carousel.Id" class="nivo-html-caption">
+                @Html.Raw(carousel.Description)
+            </div>
+        }
+    </div>
+}

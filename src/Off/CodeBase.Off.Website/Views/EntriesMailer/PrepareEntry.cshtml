@@ -1,0 +1,18 @@
+﻿@model CodeBase.Off.Website.Models.EntryShowModel
+
+@{
+    var entryUrl = Url.Abs(Url.Action("Show",
+                                      "Entry",
+                                      new {
+                                              Model.CreateDate.Year,
+                                              Model.CreateDate.Month,
+                                              Model.CreateDate.Day,
+                                              Model.Slug
+                                      },
+                                      null));
+}
+
+<h1>
+    @Model.Title
+</h1>
+@Html.Raw(Model.FullStory)

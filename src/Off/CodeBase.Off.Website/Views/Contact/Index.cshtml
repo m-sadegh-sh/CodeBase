@@ -1,0 +1,22 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@model CodeBase.Off.Website.Models.ContactModel
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("تماس با ما");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+<section class="contact-us clearfix">
+    <h1>با ما در تماس باشید.</h1>
+    @Html.Partial("_ContactForm", Model)
+    <aside>
+        @Html.Partial("Partials/_ContactDetails")
+        @{ Html.RenderAction("SocialNetworks", "Widgets"); }
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

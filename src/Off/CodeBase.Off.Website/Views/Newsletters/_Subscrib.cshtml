@@ -1,0 +1,22 @@
+﻿@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Html
+@model CodeBase.Off.Website.Models.SubscriptionRequestModel
+<section class="fancy-box">
+    <h3 class="fancy-title">عضویت در خبرنامه</h3>
+    <p>
+        شما با ثبت ایمیلتون، می تونین مطالب ارسالی اعضای کدبیس رو بصورت خبرنامه دریافت کنید.
+    </p>
+    <p class="tips">
+        در صورتی که ایمیل فعال‌سازی رو هنوز دریافت نکردی می تونی از فرم زیر برای ارسال مجدد اون استفاده کنی.
+    </p>
+    @using (Html.BeginForm(FormMethod.Post,
+                           new {
+                                   id = "subscription-form"
+                           })) {
+        @Html.AntiForgeryToken()
+        @Html.Then()
+        @Html.EditorFor(srm => srm.Email)
+        @Html.ValidationMessageFor(srm => srm.Email)
+        <input class="button block" type="submit" value="عضویت" />
+    }
+</section>

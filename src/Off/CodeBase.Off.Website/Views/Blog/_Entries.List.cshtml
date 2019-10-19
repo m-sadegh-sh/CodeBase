@@ -1,0 +1,58 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Common.Web.UI
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@{
+    var emptyTemplate = ViewData["EmptyTemplate"] as string;
+}
+@if (Model.Any()) {
+    for (var i = 0; i < Model.Count; i++) {
+        var entry = Model[i];
+        var isLastRow = Html.IsLastRow(i,
+                                       Model.Count,
+                                       1);
+
+        <article class="row clearfix @Html.If(isLastRow,
+                                              "no-bottom-margin")">
+            <h2>
+                @Html.ActionLink(entry.Title,
+                                 "Show",
+                                 "Entry",
+                                 new {
+                                         entry.CreateDate.Year,
+                                         entry.CreateDate.Month,
+                                         entry.CreateDate.Day,
+                                         entry.Slug
+                                 },
+                                 null)
+            </h2>
+            <div class="metadata">
+                @Html.DisplayFor(esm => entry.CreateDate,
+                                 new {
+                                         Pretty = entry.PrettyCreateDate
+                                 })
+                توسط @Html.DisplayFor(esm => entry.Author)
+                @if (entry.Tags.Any()) {
+                    @:در @Html.Partial("_TagsListLink",
+                                       entry.Tags)
+                }
+            </div>
+            @Html.Raw(entry.Abstract)
+            @Html.ActionLink("» ادامه",
+                             "Show",
+                             "Entry",
+                             new {
+                                     entry.CreateDate.Year,
+                                     entry.CreateDate.Month,
+                                     entry.CreateDate.Day,
+                                     entry.Slug
+                             },
+                             new {
+                                     @class = "more"
+                             })
+        </article>
+    }
+} else {
+    <section class="row clearfix no-bottom-margin">
+        @Html.Partial(emptyTemplate)
+    </section>
+}

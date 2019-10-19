@@ -1,0 +1,60 @@
+#header-wrap {
+    .templateImage('header-bg.png');
+    height: 70px;
+    right: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: @zindexHeader;
+}
+
+header {
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    width: 940px;
+}
+
+header hgroup {
+    .templateImage('logo.png', no-repeat);
+    display: block;
+    height: 41px;
+    right: 0;
+    position: absolute;
+    top: 15px;
+    width: 342px;
+}
+
+header hgroup h1 a {
+    display: block;
+    height: 41px;
+    text-indent: -9999em;
+    width: 147px;
+}
+
+header hgroup h3 {
+    height: 0;
+    text-indent: -9999em;
+}
+
+header nav {
+    float: left;
+    margin-top: 30px;
+}
+
+header nav ul {
+    font: 14px @navFontFamily;
+    list-style: none;
+    margin-left: -5px;
+    padding: 0;
+}
+
+header nav ul li { float: right; }
+
+header nav ul a:link, header nav ul a:visited {
+    color: #c5c4c4;
+    margin-right: 20px;
+    .text-shadow(0 -1px 0 rgba(10, 10, 10, 1));
+}
+
+header nav ul a:hover, header nav ul a:active { color: #17a231 }

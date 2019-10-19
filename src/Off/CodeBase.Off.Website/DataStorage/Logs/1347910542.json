@@ -1,0 +1,19 @@
+{
+  "Id": 1347910542,
+  "Level": 3,
+  "LogDateUtc": "2012-09-17T19:35:42.4859683Z",
+  "RawUrl": "/contact-us",
+  "ReferrerUrl": "http://localhost:13055/contact-us",
+  "IpInfo": "Remote: ::1, Local: 192.168.1.10",
+  "Params": {
+    "__RequestVerificationToken": "WGsubhbHMs8FAuXbticGOpnhwnEIvyPArgaFASYT8Sxlu3fe_n80lgU1,D0-QY_GO-OijgB2a7vsu_Wp1v4LfxTNXhjzaKLVVlrM45VxBggFqqz1bi50-ygM4A4VTMjtWU13i243Q0j5bfLKp2HPx-EEp056RkJh2oKA1",
+    "ASP.NET_SessionId": "5zzn1b2mm320lzfeo5iyhxeq",
+    "SenderName": "gh",
+    "SenderEmail": "lkj@gg.vv",
+    "Message": "h"
+  },
+  "Action": null,
+  "UserInfo": "--- (---)",
+  "Message": null,
+  "Exception": "Message: The anti-forgery token could not be decrypted. If this application is hosted by a Web Farm or cluster, ensure that all machines are running the same version of ASP.NET Web Pages and that the <machineKey> configuration specifies explicit encryption and validation keys. AutoGenerate cannot be used in a cluster.\r\nSource: System.Web.WebPages\r\nTargetSite: System.Web.Helpers.AntiXsrf.AntiForgeryToken Deserialize(System.String)\r\nStackTrace:    at System.Web.Helpers.AntiXsrf.AntiForgeryTokenSerializer.Deserialize(String serializedToken)\r\n   at System.Web.Helpers.AntiXsrf.AntiForgeryTokenStore.GetFormToken(HttpContextBase httpContext)\r\n   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)\r\n   at System.Web.Helpers.AntiForgery.Validate()\r\n   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)\r\n   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)\r\n   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)\r\n   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)\r\n   at System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__17(AsyncCallback asyncCallback, Object asyncState)\r\n   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)\r\n   at System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)\r\n   at System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__2(AsyncCallback asyncCallback, Object asyncState)\r\n   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)\r\n   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)\r\n   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)\r\n   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()\r\n   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)\r\n"
+}

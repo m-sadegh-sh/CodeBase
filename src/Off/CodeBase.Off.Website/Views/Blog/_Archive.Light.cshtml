@@ -1,0 +1,21 @@
+﻿@model IDictionary<FarsiLibrary.Utils.PersianDate, int>
+@if (Model.Any()) {
+    <section class="fancy-box">
+        <h3 class="fancy-title">آرشیو</h3>
+        <ul class="link-list">
+            @foreach (var archive in Model) {
+                <li>@Html.ActionLink(string.Format("{0} {1} ({2})",
+                                                   archive.Key.LocalizedMonthName,
+                                                   archive.Key.Year,
+                                                   archive.Value),
+                                     "ByDate",
+                                     "Blog",
+                                     new {
+                                             archive.Key.Year,
+                                             archive.Key.Month
+                                     },
+                                     null)</li>
+            }
+        </ul>
+    </section>
+}

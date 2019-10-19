@@ -1,0 +1,41 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Off.Website.Extensions
+@model IList<CodeBase.Off.Core.Domain.Service>
+@if (Model.Any())
+{
+    for (int i = 0; i < Model.Count; i++)
+    {
+        var service = Model[i];
+        bool isRowStart = (i + 1) % 3 == 1;
+        var isMidCol = (i == 1 || (i > 2 && (i - 1) % 3 == 0));
+        bool isRowEnd = (i + 1) % 3 == 0;
+        bool isLastRow = (Model.Count / 3) == (i / 3);
+
+        if (isRowStart)
+        {
+    @:<div class="row clearfix @Html.If(isLastRow, "no-bottom-margin")">
+}
+
+        <section class="col @Html.If(isMidCol, "mid")">
+            <h2>
+                @Html.ActionLink(service.Title, "Show", new
+           {
+               service.Slug
+           })
+            </h2>
+            <p>
+                <img src="@Url.ServiceIconUrl("web-design", false)" class="align-right" width="60" height="62" alt="@service.Title" title="@service.Title" />
+                @service.Description
+            </p>
+            @Html.ActionLink("» بیشتر", "Show", new
+       {
+           service.Slug
+       }, new
+       {
+           @class = "more"
+       })
+        </section>
+
+    @Html.If(isRowEnd, "</div>")
+    }
+}

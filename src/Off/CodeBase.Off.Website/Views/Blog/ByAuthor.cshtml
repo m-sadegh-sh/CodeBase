@@ -1,0 +1,43 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Off.Website.Models
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@{
+    Layout = "_BlogLayout.cshtml";
+
+    var author = (UserSummaryModel) ViewBag.Author;
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(string.Format("نوشته‌های ”{0}“",
+                                  author.FriendlyName));
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.SetCanonicalUrl(Url.Action("ByAuthor",
+                                      new {
+                                              author.UserName
+                                      }));
+    layout.AddBreadcrumb(Html.ActionLink(string.Format("نوشته‌های ”{0}“",
+                                                       author.FriendlyName),
+                                         new {
+                                                 author.UserName
+                                         },
+                                         CurrentMode.All));
+}
+@section Metas
+{
+    <link href="@Url.Action("ByAuthor",
+                            "Feed",
+                            new {
+                                    author.UserName
+                            })" title="خوراک نوشته‌های ”@author.FriendlyName“" rel="alternate" type="application/rss+xml" />
+}
+<h1>نوشته‌های ”@author.FriendlyName“</h1>
+<section class="primary">
+    @{ Html.RenderPartial("_Entries.List",
+                          Model,
+                          new ViewDataDictionary {
+                                  {"EmptyTemplate", "Partials/NoMatch"}
+                          }); }
+</section>

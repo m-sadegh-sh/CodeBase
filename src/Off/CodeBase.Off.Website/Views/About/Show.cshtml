@@ -1,0 +1,49 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Off.Website.Extensions
+@using CodeBase.Off.Website.Helpers
+@model CodeBase.Off.Website.Models.TeamMemberShowModel
+
+@{
+    Layout = "_AboutLayout.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(Model.FullName);
+    layout.AddKeywords("");
+    layout.AddDescription(Model.FullName + ": " + Model.Position);
+    layout.SetCanonicalUrl(Url.Show(Model));
+    layout.AddBreadcrumb(Html.ShowLink(Model,Model.FullName,
+                                         null,
+                                         CurrentMode.All));
+}
+<section class="about-us clearfix">
+    <h1>
+        @Model.FullName
+    </h1>
+    <article class="primary">
+        <section class="row clearfix">
+            <figure class="large-thumbnail box">
+                <a href="@Url.Show(Model.User)">
+                    <img class="member-image" alt="@(Model.FullName + "، " + Model.Position)" rel="tooltip" title="@(Model.FullName + "، " + Model.Position)" src="@Url.MemberImage(Model.User.Id,
+                                                                                                                                                                         false)" width="200" height="188">
+                </a>
+            </figure>
+            @Html.Raw(Model.Biography)
+        </section>
+        <h2>دیگر اعضای تیم...</h2>
+        @{ Html.RenderAction(ActionNames.Members,
+                             new {
+                                     Model.User.UserName,
+                                     EmptyTemplate = ViewNames.NoMatch
+                             }); }
+    </article>
+    <aside>
+        @Html.Partial(ViewNames.MemberMetas,
+                      Model)
+        @Html.Partial("_MemberResume",
+                      Model)
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

@@ -1,0 +1,21 @@
+﻿@model IList<CodeBase.Off.Website.Models.UserSummaryModel>
+@if (Model.Any()) {
+    <section class="fancy-box">
+        <h3 class="fancy-title">نویسندگان</h3>
+        <ul class="link-list">
+            @foreach (var user in Model) {
+                <li>
+                    @Html.ActionLink(string.Format("{0} ({1})",
+                                                   user.FriendlyName,
+                                                   user.EntriesCount),
+                                     "ByAuthor",
+                                     "Blog",
+                                     new {
+                                             user.UserName
+                                     },
+                                     null)
+                </li>
+            }
+        </ul>
+    </section>
+}

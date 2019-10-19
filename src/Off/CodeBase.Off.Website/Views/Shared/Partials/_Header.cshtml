@@ -1,0 +1,17 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Off.Core.Domain
+@{
+    var config = IoC.Get<Config>();
+}
+
+<div id="header-wrap">
+    <header>
+        <hgroup>
+            <h1>@Html.ActionLink(config.Heading, "Index", "Home", null, new {
+                    title = config.Heading + " | " + config.Tagline
+                })</h1>
+            <h3>@config.Tagline</h3>
+        </hgroup>
+        @Html.Partial("Partials/_Nav")
+    </header>
+</div>

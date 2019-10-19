@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CodeBase.Off.Core.Domain.FriendLink>
+@if (Model.Any()) {
+    <div class="fancy-box">
+        <h3 class="fancy-title">دوستان ما</h3>
+        <ul class="link-list">
+            @foreach (var friendLink in Model) {
+                <li>
+                    @Html.ActionLink(friendLink.Title, "RedirectToFriendLink", new {
+                        friendLink.Slug
+                    })
+                </li>
+            }
+        </ul>
+    </div>
+}

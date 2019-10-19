@@ -1,0 +1,16 @@
+{
+  "Id": 1348073015,
+  "Level": 3,
+  "LogDateUtc": "2012-09-19T16:43:35.6871635Z",
+  "RawUrl": "/subscrib",
+  "ReferrerUrl": "http://localhost:13055/blog",
+  "IpInfo": "Remote: ::1, Local: 192.168.1.10",
+  "Params": {
+    "__RequestVerificationToken": "11dpfqPYpGi5d4XvkmEjt321eAHGy7XZzRt2QSJL7poVdPtBDKOTKF3hISp37pcHol4gHDDHxcukdE2exIXGUn2HXQsnPgQ58Ybvc17hzRg1,lx8_lPJz1pZrifLVhkZR1K77b6Z0eORhF8supUj8HMAdl4RZe_1Xc2jcUc0OAOopsG94Jgfri8tXyjZF4avvSt9IaHoyaqT6oZMjcz80v2o1",
+    "Email": "j@h2.c"
+  },
+  "Action": null,
+  "UserInfo": "--- (---)",
+  "Message": "An error occured when sending a message",
+  "Exception": "Message: A recipient must be specified.\r\nSource: System\r\nTargetSite: Void Send(System.Net.Mail.MailMessage)\r\nStackTrace:    at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at CodeBase.Off.Core.Utilities.MessageService.SendEmail(MailMessage message) in d:\\Projects\\CodeBase\\Off\\CodeBase.Off.Core\\Utilities\\MessageService.cs:line 17\r\n"
+}

@@ -1,0 +1,15 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@model IList<CodeBase.Off.Core.Domain.TeamMember>
+
+@if (Model.Any()) {
+    <ul class="team-members clearfix">
+        @for (int i = 0; i < Model.Count; i++) {
+            var member = Model[i];
+            var isOdd = i%2 == 0;
+
+            <li class="@Html.If(isOdd, "odd")">
+                @Html.Partial("_MemberDetailsBox", member)
+            </li>
+        }
+    </ul>
+}

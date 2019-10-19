@@ -1,0 +1,19 @@
+{
+  "Id": 1347909909,
+  "Level": 3,
+  "LogDateUtc": "2012-09-17T19:25:09.8077812Z",
+  "RawUrl": "/contact-us",
+  "ReferrerUrl": "http://localhost:13055/contact-us",
+  "IpInfo": "Remote: ::1, Local: 192.168.1.10",
+  "Params": {
+    "__RequestVerificationToken": "4l53TMpkGLEUD38F-RTI_qE2yVS4kvcokznz1hTx1nJv5JlrD5NGDmzjyd9YqkPUnT1Ya58HoGu40ZezMOVqPAa4tca4B-7zbkBgEL2eftE1,D0-QY_GO-OijgB2a7vsu_Wp1v4LfxTNXhjzaKLVVlrM45VxBggFqqz1bi50-ygM4A4VTMjtWU13i243Q0j5bfLKp2HPx-EEp056RkJh2oKA1",
+    "ASP.NET_SessionId": "5zzn1b2mm320lzfeo5iyhxeq",
+    "SenderName": "gh",
+    "SenderEmail": "lkj@gg.vv",
+    "Message": "h"
+  },
+  "Action": null,
+  "UserInfo": "--- (---)",
+  "Message": "An error occured when sending a message",
+  "Exception": "Message: Failure sending mail.\r\nSource: System\r\nTargetSite: Void Send(System.Net.Mail.MailMessage)\r\nStackTrace:    at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at CodeBase.Off.Core.Utilities.MessageService.SendEmail(MailMessage message) in d:\\Projects\\CodeBase\\Off\\CodeBase.Off.Core\\Utilities\\MessageService.cs:line 17\r\n"
+}

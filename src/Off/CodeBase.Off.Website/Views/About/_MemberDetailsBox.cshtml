@@ -1,0 +1,16 @@
+﻿@using CodeBase.Off.Website.Extensions
+@model CodeBase.Off.Core.Domain.TeamMember
+
+<div class="thumbnail box">
+    <a href="@Url.Action("Member", new {
+                 Model.Slug
+             })">
+        <img alt="@Model.FullName" class="member-thumb" title="@Model.FullName" src="@Url.MemberImageUrl(Model.Slug, true)" width="83" height="78">
+    </a>
+</div>
+<p class="name">
+    @Html.ActionLink(Model.FullName, "Member", new {
+        Model.Slug
+    })
+</p>
+<p class="position">@Model.Position</p>

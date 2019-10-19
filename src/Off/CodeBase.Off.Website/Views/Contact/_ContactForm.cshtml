@@ -1,0 +1,34 @@
+﻿@using CodeBase.Common.Web.Mvc
+@model CodeBase.Off.Website.Models.ContactModel
+<div class="primary">
+    <p class="intro">
+        دوستان در صورتی که خواستین مساله ای (نظر، انتقاد، پیشنهاد، درخواست همکاری، ارسال مطلب مهمان، مشورت درباره پروژه، درخواست انجام پروژه) رو باهامون در میون بذارین می تونین از طریق فرم زیر اقدام کنین.
+    </p>
+    @using (Html.BeginForm(FormMethod.Post, new {
+        id = "contact-form",
+        @class = "fancy-box"
+    })) {
+        @Html.AntiForgeryToken()
+        <p>لطفا نام، پست الکترونیکی و پیام خودتون رو در فیلدهای ذیل وارد کنید.</p>
+        <div>
+            @Html.LabelFor(c => c.SenderName)
+            @Html.TextBoxFor(c => c.SenderName)
+            @Html.ValidationMessageFor(c => c.SenderName)
+        </div>
+        <div>
+            @Html.LabelFor(c => c.SenderEmail)
+            @Html.TextBoxFor(c => c.SenderEmail, new {
+                @class = "text-left"
+            })
+            @Html.ValidationMessageFor(c => c.SenderEmail)
+        </div>
+        <div>
+            @Html.LabelFor(c => c.Message)
+            @Html.TextAreaFor(c => c.Message, 20, 50, null)
+            @Html.ValidationMessageFor(c => c.Message)
+        </div>
+        <div class="actions">
+            <input type="submit" value="بفرست" class="button">
+        </div>
+    }
+</div>

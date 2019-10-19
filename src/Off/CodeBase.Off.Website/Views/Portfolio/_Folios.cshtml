@@ -1,0 +1,27 @@
+﻿@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Off.Website.Extensions
+@model IList<CodeBase.Off.Core.Domain.Portfolio>
+@if (Model.Any())
+{
+    <ul class="folio-list clearfix">
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            var portfolio = Model[i];
+            var isLastRow = (((Model.Count%3==0?Model.Count-1:Model.Count) / 3)*3) <= i;
+            
+            <li class="folio-thumb @Html.If(isLastRow, "no-bottom-margin")">
+                <div class="thumb box">
+                    <a class="lightbox" href="@Url.PortfolioImageUrl(portfolio.Slug, false)" rel="services" title="@portfolio.Description">
+                        <img src="@Url.PortfolioImageUrl(portfolio.Slug, true)" width="264" height="168" alt="@portfolio.Title" title="@portfolio.Title" />
+                    </a>
+                </div>
+                <h4 class="title">
+                    @Html.ActionLink(@portfolio.Title, "Show", new
+               {
+                   portfolio.Slug
+               })
+                </h4>
+            </li>
+        }
+    </ul>
+}

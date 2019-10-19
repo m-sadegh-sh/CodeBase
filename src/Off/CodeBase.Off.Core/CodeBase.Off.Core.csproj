@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C11B64E-68E4-48B6-9801-E5428A10E993}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeBase.Off.Core</RootNamespace>
+    <AssemblyName>CodeBase.Off.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppLimit.CloudComputing.SharpBox">
+      <HintPath>..\..\packages\AppLimit.CloudComputing.SharpBox.1.2.0.542\lib\net40-full\AppLimit.CloudComputing.SharpBox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FarsiLibrary.Utils">
+      <HintPath>..\..\lib\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MVC.Utilities">
+      <HintPath>..\packages\mvc-utilities.1.08\lib\net4\MVC.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Attribute.cs" />
+    <Compile Include="Domain\Carousel.cs" />
+    <Compile Include="Domain\Config.cs" />
+    <Compile Include="Domain\Service.cs" />
+    <Compile Include="Domain\Entry.cs" />
+    <Compile Include="Domain\FriendLink.cs" />
+    <Compile Include="Domain\Log.cs" />
+    <Compile Include="Domain\LogAction.cs" />
+    <Compile Include="Domain\Portfolio.cs" />
+    <Compile Include="Domain\SocialNetwork.cs" />
+    <Compile Include="Domain\Subscription.cs" />
+    <Compile Include="Domain\Tag.cs" />
+    <Compile Include="Domain\TeamMember.cs" />
+    <Compile Include="Domain\Testimonial.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\ValueSnapshot.cs" />
+    <Compile Include="LogActionProviders\AttributeLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\CarouselLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\SubscriptionLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\ServiceLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\PortfolioLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\TestimonialLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\TeamMemberLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\SocialNetworkLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\FriendLinkLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\EntryLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\LogActionProviderBase.cs" />
+    <Compile Include="LogActionProviders\LogActionProviderContext.cs" />
+    <Compile Include="LogActionProviders\TagLogActionProvider.cs" />
+    <Compile Include="LogActionProviders\UserLogActionProvider.cs" />
+    <Compile Include="OffCoreModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templating\EntryTemplateBuilder.cs" />
+    <Compile Include="Templating\ITemplateBuilder.cs" />
+    <Compile Include="Services\Impl\SubscriptionService.cs" />
+    <Compile Include="Services\ISubscriptionService.cs" />
+    <Compile Include="Services\ICarouselService.cs" />
+    <Compile Include="Services\Impl\CarouselService.cs" />
+    <Compile Include="Services\Impl\ServiceService.cs" />
+    <Compile Include="Services\IServiceService.cs" />
+    <Compile Include="Services\Impl\PortfolioService.cs" />
+    <Compile Include="Services\IPortfolioService.cs" />
+    <Compile Include="Services\Impl\TeamMemberService.cs" />
+    <Compile Include="Services\ITeamMemberService.cs" />
+    <Compile Include="Services\Impl\TestimonialService.cs" />
+    <Compile Include="Services\ITestimonialService.cs" />
+    <Compile Include="Services\Impl\SocialNetworkService.cs" />
+    <Compile Include="Services\ISocialNetworkService.cs" />
+    <Compile Include="Services\IFriendLinkService.cs" />
+    <Compile Include="Services\IAttributeService.cs" />
+    <Compile Include="Utilities\ICloudService.cs" />
+    <Compile Include="Services\IConfigService.cs" />
+    <Compile Include="Utilities\IDateTimeHelper.cs" />
+    <Compile Include="Services\IEntryService.cs" />
+    <Compile Include="Services\ILogService.cs" />
+    <Compile Include="Utilities\IMessageService.cs" />
+    <Compile Include="Services\Impl\AttributeService.cs" />
+    <Compile Include="Services\Impl\AttributeServiceExtensions.cs" />
+    <Compile Include="Utilities\CloudService.cs" />
+    <Compile Include="Services\Impl\ConfigService.cs" />
+    <Compile Include="Services\Impl\FriendLinkService.cs" />
+    <Compile Include="Utilities\DateTimeHelper.cs" />
+    <Compile Include="Services\Impl\EntryService.cs" />
+    <Compile Include="Services\Impl\LogService.cs" />
+    <Compile Include="Services\Impl\LogServiceExtensions.cs" />
+    <Compile Include="Utilities\MessageService.cs" />
+    <Compile Include="Services\Impl\TagService.cs" />
+    <Compile Include="Services\Impl\UserService.cs" />
+    <Compile Include="Services\ITagService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Web\Mvc\UrlHelperExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.Infrastructure\CodeBase.Common.Infrastructure.csproj">
+      <Project>{0E08C874-E030-4C0D-A0E1-6B1996186EF5}</Project>
+      <Name>CodeBase.Common.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.PackageInfo\CodeBase.Common.PackageInfo.csproj">
+      <Project>{3028148D-D9D4-4815-9436-66A4B6ECFA90}</Project>
+      <Name>CodeBase.Common.PackageInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.Web\CodeBase.Common.Web.csproj">
+      <Project>{782D310E-E64C-4FCF-AFDE-EFB321BB971E}</Project>
+      <Name>CodeBase.Common.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

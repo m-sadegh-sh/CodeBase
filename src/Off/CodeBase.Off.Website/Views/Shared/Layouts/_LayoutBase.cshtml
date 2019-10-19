@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization
+@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc.Html
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Off.Website.Configurators
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddBreadcrumb(() => Html.ActionLink("کدبیس", "Index", "Home"));
+}
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie7 oldie"><![endif]-->
+<!--[if IE 8 ]><html class="ie8 oldie"><![endif]-->
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html><![endif]-->
+<head>
+    @Html.Partial("Partials/_Metas")
+    @RenderSection("Metas", false)
+    @Styles.Render("Plugins".AsStyle(false, false)).ToLower()
+    @Styles.Render("Syntax-Highlighter".AsStyle(false, false)).ToLower()
+    @Styles.Render("All".AsStyle(true, false)).ToLower()
+    @RenderSection("Styles", false)
+    @Scripts.Render("Modernizr".AsScript(false, false)).ToLower()
+</head>
+<body>
+    @Html.Partial("Partials/_Header")
+    <div class="content-wrap">
+        <a id="top"></a>
+        @Html.Partial("Partials/_Notifications")
+        @RenderBody()
+    </div>
+    @Html.Partial("Partials/_Footer")
+    @Scripts.Render("jQuery".AsScript(false, false)).ToLower()
+    @Scripts.Render("jQuery-Plugins".AsScript(false, false)).ToLower()
+    @Scripts.Render("jQuery-Validation".AsScript(false, false)).ToLower()
+    @Scripts.Render("Syntax-Highlighter".AsScript(false, false)).ToLower()
+    @Scripts.Render("All".AsScript(true, false)).ToLower()
+    @RenderSection("Scripts", false)
+    @{ Html.RenderAction("GoogleAnalytics", "Widgets"); }
+</body>
+</html>

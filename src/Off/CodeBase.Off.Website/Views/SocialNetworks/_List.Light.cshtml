@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CodeBase.Off.Website.Models.SocialNetworkShowModel>
+@if (Model.Any()) {
+    <section class="fancy-box">
+        <h3 class="fancy-title">ما رو دنبال کنید...</h3>
+        <ul class="link-list social">
+            @foreach (var socialNetwork in Model) {
+                <li class="@socialNetwork.Slug">
+                    @Html.ActionLink(socialNetwork.Name,
+                                     "RedirectTo",
+                                     new {
+                                             socialNetwork.Slug
+                                     })
+                </li>
+            }
+        </ul>
+    </section>
+}

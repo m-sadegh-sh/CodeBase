@@ -1,0 +1,18 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@model IList<CodeBase.Off.Core.Domain.Portfolio>
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("نمونه کارها");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+<section class="portfolio clearfix">
+    <h1>کارای برجستمون اینان.</h1>
+    @Html.Partial("_Folios", Model)
+    @Html.Partial("Partials/_BackTo")
+</section>

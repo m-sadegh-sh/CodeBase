@@ -1,0 +1,68 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Off.Website.Extensions
+@model CodeBase.Off.Website.Models.EntryShowModel
+@{
+    Layout = "~/Views/Blog/_BlogLayout.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(Model.Title);
+    layout.AddKeywords(Model.Tags.ToMetaKeywords());
+    layout.AddDescription(Model.FullStory.ToMetaDescription(true));
+    layout.SetCanonicalUrl(Url.Action(new {
+            Model.CreateDate.Year,
+            Model.CreateDate.Month,
+            Model.Slug
+    }));
+    layout.AddBreadcrumb(Html.ActionLink(Model.Title,
+                                         new {
+                                                 Model.CreateDate.Year,
+                                                 Model.CreateDate.Month,
+                                                 Model.Slug
+                                         },
+                                         CurrentMode.All));
+}
+<h1>@Model.Title</h1>
+<article class="primary">
+    <div class="metadata">
+        @Html.DisplayFor(esm => Model.CreateDate,
+                         new {
+                                 Pretty = Model.PrettyCreateDate
+                         })
+        توسط @Html.DisplayFor(esm => Model.Author)
+        @if (Model.Tags.Any()) {
+            @:در @Html.Partial("~/Views/Blog/_TagsListLink.cshtml",
+                               Model.Tags)
+        }
+    </div>
+    @Html.Raw(Model.FullStory)
+    <div>
+        @if (Model.Prev != null) {
+            <div class="prev align-right">
+                @Html.ActionLink(Model.Prev.Title,
+                                 "Show",
+                                 new {
+                                         Model.Prev.CreateDate.Year,
+                                         Model.Prev.CreateDate.Month,
+                                         Model.Prev.Slug
+                                 })
+                <span>→</span>
+            </div>
+        }
+        @if (Model.Next != null) {
+            <div class="next align-left">
+                <span>←</span>
+                @Html.ActionLink(Model.Next.Title,
+                                 "Show",
+                                 new {
+                                         Model.Next.CreateDate.Year,
+                                         Model.Next.CreateDate.Month,
+                                         Model.Next.Slug
+                                 })
+            </div>
+        }
+        <div class="clearfix"></div>
+    </div>
+</article>

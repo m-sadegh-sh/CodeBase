@@ -1,0 +1,28 @@
+﻿<footer>
+    <div class="footer-content">
+        <ul class="footer-menu">
+            <li>
+                @Html.ActionLink("صفحه اصلی", "Index", "Home")
+            </li>
+            <li>
+                @Html.ActionLink("نوشته‌ها", "Index", "Blog")
+            </li>
+            <li>
+                @Html.ActionLink("خدمات", "Index", "Services")
+            </li>
+            <li>
+                @Html.ActionLink("نمونه کارها", "Index", "Portfolio")
+            </li>
+            <li>
+                @Html.ActionLink("درباره ما", "Index", "About")
+            </li>
+            <li>
+                @Html.ActionLink("تماس با ما", "Index", "Contact")
+            </li>
+            <li class="rss-feed">
+                @Html.ActionLink("خوراک", "Index", "Feed")
+            </li>
+        </ul>
+        <p class="footer-text">&copy; @DateTime.Now.Year تمامی حقوق برای <a href="http://www.codebase.ir/">کدبیس</a> محفوظ است. - طراحی اولیه توسط <a href="http://www.styleshout.com/" target="_blank">استایل‌شوت</a></p>
+    </div>
+</footer>

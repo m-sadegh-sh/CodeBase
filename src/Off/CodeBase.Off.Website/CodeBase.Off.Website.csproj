@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C08B10E-A8FA-44C6-8FD3-29F2224D7610}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeBase.Off.Website</RootNamespace>
+    <AssemblyName>CodeBase.Off.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoMapper.2.2.1-ci8\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="C5">
+      <HintPath>..\..\packages\Quartz.2.0.1\lib\net40\C5.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Common.Logging.2.1.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DataAnnotationsExtensions.MVC3.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DotNetOpenAuth.Core.4.1.2.12274\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.Core.4.1.2.12274\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.2.12274\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Utils, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Gestalt">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Gestalt.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Math">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.Core.4.1.2.12274\lib\net45-full\Mono.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvc.Mailer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MvcMailer.4.0\lib\40\Mvc.Mailer.dll</HintPath>
+    </Reference>
+    <Reference Include="MVC.Utilities, Version=1.13.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\mvc-utilities.1.13.5.0\lib\net40\MVC.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NinjectAdapter">
+      <HintPath>..\..\packages\CommonServiceLocator.NinjectAdapter.1.0.0.0\lib\NinjectAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="OptimizerPrime">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\OptimizerPrime.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security.Cryptography">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.Core.4.1.2.12274\lib\net45-full\Org.Mentalis.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.15.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PagedList.1.15.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.0.1.100, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Quartz.2.0.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.0-alpha1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=27d5780f9da597f1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CraigsUtilityLibrary.3.2.0033\lib\net40\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Compression">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.DataTypes">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.DataTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Encryption">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Events">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.FileFormats">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.FileFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.IO">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Random">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Random.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Reflection">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Web">
+      <HintPath>..\..\packages\OptimizerPrime.1.0\lib\Utilities.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebActivator.1.5.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cdn\Images\Blank.gif" />
+    <Content Include="Cdn\Images\Fancybox\Buttons.png" />
+    <Content Include="Cdn\Images\Fancybox\Loading.gif" />
+    <Content Include="Cdn\Images\Fancybox\Overlay.png" />
+    <Content Include="Cdn\Images\Loading.gif" />
+    <Content Include="Cdn\Images\Portfolios\iauq-information-thumb.png" />
+    <Content Include="Cdn\Images\Portfolios\iauq-information.png" />
+    <Content Include="Cdn\Images\Portfolios\magicbyte-net-thumb.png" />
+    <Content Include="Cdn\Images\Portfolios\magicbyte-net.png" />
+    <Content Include="Cdn\Images\Portfolios\xplorium-net-thumb.png" />
+    <Content Include="Cdn\Images\Portfolios\xplorium-net.png" />
+    <Content Include="Cdn\Images\Services\Windows-Phone-Development.png" />
+    <Content Include="Cdn\Images\Services\Windows-Development.png" />
+    <Content Include="Cdn\Images\Services\Web-Design.png" />
+    <Content Include="Cdn\Images\Services\Web-Development.png" />
+    <Content Include="Cdn\Images\Carousels\1347644458.png" />
+    <Content Include="Cdn\Images\Carousels\1347644477.png" />
+    <Content Include="Cdn\Images\Carousels\1347644485.png" />
+    <Content Include="Cdn\Images\Team-Members\Default-Thumb.png" />
+    <Content Include="Cdn\Images\Team-Members\Default-Image.png" />
+    <Content Include="Cdn\Images\Team-Members\1347386571-Thumb.png" />
+    <Content Include="Cdn\Images\Wmd\Wmd-Buttons.png" />
+    <Content Include="Cdn\Less\Brushes\Default.less" />
+    <Content Include="Cdn\Less\Brushes\Django.less" />
+    <Content Include="Cdn\Less\Brushes\Eclipse.less" />
+    <Content Include="Cdn\Less\Brushes\Emacs.less" />
+    <Content Include="Cdn\Less\Brushes\FadeToGrey.less" />
+    <Content Include="Cdn\Less\Brushes\MDUltra.less" />
+    <Content Include="Cdn\Less\Brushes\Midnight.less" />
+    <Content Include="Cdn\Less\Brushes\RDark.less" />
+    <Content Include="Cdn\Less\Helpers\Buttons.less" />
+    <Content Include="Cdn\Less\Helpers\Thumbs.less" />
+    <Content Include="Cdn\Less\jQuery-Fancybox.less" />
+    <Content Include="Cdn\Less\jQuery-Nivo-Slider.less" />
+    <Content Include="Cdn\Less\Syntax-Highlighter-Core.less" />
+    <Content Include="Cdn\Less\Prettify.less" />
+    <Content Include="Cdn\Less\Reset.less" />
+    <Content Include="Cdn\Less\Utilities.less" />
+    <Content Include="Cdn\Less\Variables.less" />
+    <Content Include="Cdn\Less\Wmd.less" />
+    <Content Include="Cdn\Scripts\Helpers\Buttons.js" />
+    <Content Include="Cdn\Scripts\Helpers\Media.js" />
+    <Content Include="Cdn\Scripts\Helpers\Thumbs.js" />
+    <Content Include="Cdn\Scripts\jQuery-Easing.js" />
+    <Content Include="Cdn\Scripts\jQuery-Fancybox.js" />
+    <Content Include="Cdn\Scripts\jQuery-Nivo-Slider.js" />
+    <Content Include="Cdn\Scripts\jQuery-Smooth-Scroll.js" />
+    <Content Include="Cdn\Scripts\jQuery-Unobtrusive-Ajax.js" />
+    <Content Include="Cdn\Scripts\jQuery-Validate-Unobtrusive.js" />
+    <Content Include="Cdn\Scripts\jQuery-Validate.js" />
+    <Content Include="Cdn\Scripts\jQuery.HoverIntent.js" />
+    <Content Include="Cdn\Scripts\jQuery.js" />
+    <Content Include="Cdn\Scripts\jQuery.LazyLoad.js" />
+    <Content Include="Cdn\Scripts\jQuery.MouseWheel.js" />
+    <Content Include="Cdn\Scripts\jQuery.TopLink.js" />
+    <Content Include="Cdn\Scripts\jQuery.Watermark.js" />
+    <Content Include="Cdn\Scripts\jQuery.Wmd.js" />
+    <Content Include="Cdn\Scripts\Modernizr.js" />
+    <Content Include="Cdn\Scripts\Syntax-Highlighter-Core.js" />
+    <Content Include="Cdn\Scripts\Languages\C-Sharp.js" />
+    <Content Include="Cdn\Scripts\Languages\Css.js" />
+    <Content Include="Cdn\Scripts\Languages\Java-Script.js" />
+    <Content Include="Cdn\Scripts\Languages\Plain.js" />
+    <Content Include="Cdn\Scripts\Languages\Power-Shell.js" />
+    <Content Include="Cdn\Scripts\Languages\Sql.js" />
+    <Content Include="Cdn\Scripts\Languages\Xml.js" />
+    <Content Include="Cdn\Templates\Page-One\Images\Arrows.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Back-To-Top.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Bg.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Btn-Bg.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Bullets.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Favicon.ico" />
+    <Content Include="Cdn\Templates\Page-One\Images\Header-Bg.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Logo.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Notifications.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Quote-Open.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Quote.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Rss.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Section-Sep.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Delicious.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Dribble.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Facebook.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Flickr.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Google-Plus.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Linked-In.png" />
+    <Content Include="Cdn\Templates\Page-One\Images\Social\Twitter.png" />
+    <Content Include="Cdn\Images\Team-Members\1347386571.png" />
+    <Content Include="Cdn\Templates\Page-One\Less\Alerts.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Content.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Forms.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Core.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Footer.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Header.less" />
+    <Content Include="Cdn\Less\Mixins.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Section.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Slider.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Social.less" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\AutoLoad.js" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Shaker.js" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Signaler.js" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Popover.js" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Tooltip.js" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Init.js" />
+    <Content Include="Global.asax" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="AutoMapping\Converters\DateTimeToPersianDateConverter.cs" />
+    <Compile Include="AutoMapping\Resolvers\UserIdToTeamMemberSummaryModelResolver.cs" />
+    <Compile Include="AutoMapping\Resolvers\LogSeverityLevelToStringResolver.cs" />
+    <Compile Include="AutoMapping\Resolvers\TagIdsToTagShowModelsResolver.cs" />
+    <Compile Include="AutoMapping\Resolvers\TagEntriesCountResolver.cs" />
+    <Compile Include="AutoMapping\Resolvers\UserEntriesCountResolver.cs" />
+    <Compile Include="AutoMapping\Resolvers\UserIdToUserSummaryModelResolver.cs" />
+    <Compile Include="Configurators\ClientValidationExtensionsRegistrar.cs" />
+    <Compile Include="Configurators\KeyRegisterar.cs" />
+    <Compile Include="Configurators\NinjectRegisterar.cs" />
+    <Compile Include="Attributes\AdminAttribute.cs" />
+    <Compile Include="AutoMapping\Converters\BoolToStringConverter.cs" />
+    <Compile Include="AutoMapping\Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="AutoMapping\Converters\EntryToSyndicationItemConverter.cs" />
+    <Compile Include="AutoMapping\Converters\NullOrEmptyStringToNotSpecifiedStringConverter.cs" />
+    <Compile Include="AutoMapping\MappingExtensions.cs" />
+    <Compile Include="AutoMapping\Resolvers\MarkdownToHtmlResolver.cs" />
+    <Compile Include="Configurators\AutoMapperConfig.cs" />
+    <Compile Include="Configurators\BundleRegisterar.cs" />
+    <Compile Include="Configurators\BundlingHelper.cs" />
+    <Compile Include="Configurators\JobRunner.cs" />
+    <Compile Include="Configurators\RouteRegisterar.cs" />
+    <Compile Include="Configurators\VirtualFileReader.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Areas\Management\Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\EntryController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Controllers\NewslettersController.cs" />
+    <Compile Include="Controllers\TestimonialsController.cs" />
+    <Compile Include="Controllers\SocialNetworksController.cs" />
+    <Compile Include="Controllers\FriendLinksController.cs" />
+    <Compile Include="Controllers\CarouselsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FeedController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotifyType.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\WidgetsController.cs" />
+    <Compile Include="Extensions\ModelExtensions.cs" />
+    <Compile Include="Extensions\UrlHelperExtensions.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\StyleHelpers.cs" />
+    <Compile Include="Helpers\ViewDataKeys.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Jobs\CloudBackupJob.cs" />
+    <Compile Include="Jobs\CloudBackupScheduler.cs" />
+    <Compile Include="Jobs\NotSentQueuedMailsSenderJob.cs" />
+    <Compile Include="Jobs\NotSentQueuedMailsSenderScheduler.cs" />
+    <Compile Include="Jobs\NotConfirmedSubscriptionsRemoverJob.cs" />
+    <Compile Include="Jobs\NotConfirmedSubscriptionsRemoverScheduler.cs" />
+    <Compile Include="Jobs\EntriesSenderJob.cs" />
+    <Compile Include="Jobs\EntriesSenderScheduler.cs" />
+    <Compile Include="Mailers\ContactMailer.cs" />
+    <Compile Include="Mailers\EntriesMailer.cs" />
+    <Compile Include="Mailers\NewslettersMailer.cs" />
+    <Compile Include="Mailers\CustomMailerBase.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\CarouselEditModel.cs" />
+    <Compile Include="Models\CarouselShowModel.cs" />
+    <Compile Include="Models\AttributeEditModel.cs" />
+    <Compile Include="Models\AttributeGridModel.cs" />
+    <Compile Include="Models\CarouselGridModel.cs" />
+    <Compile Include="Models\ConfigEditModel.cs" />
+    <Compile Include="Models\SubscriptionRequestModel.cs" />
+    <Compile Include="Models\UnSubscribRequestModel.cs" />
+    <Compile Include="Models\PortfolioSummaryModel.cs" />
+    <Compile Include="Models\ServiceSummaryModel.cs" />
+    <Compile Include="Models\SubscriptionGridModel.cs" />
+    <Compile Include="Models\PortfolioGridModel.cs" />
+    <Compile Include="Models\ServiceGridModel.cs" />
+    <Compile Include="Models\SocialNetworkGridModel.cs" />
+    <Compile Include="Models\SubscribRequestModel.cs" />
+    <Compile Include="Models\TagGridModel.cs" />
+    <Compile Include="Models\TeamMemberGridModel.cs" />
+    <Compile Include="Models\TestimonialGridModel.cs" />
+    <Compile Include="Models\UserGridModel.cs" />
+    <Compile Include="Models\FriendLinkGridModel.cs" />
+    <Compile Include="Models\EntryGridModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ValueSnapshotShowModel.cs" />
+    <Compile Include="Models\LogActionShowModel.cs" />
+    <Compile Include="Models\LogActionGridModel.cs" />
+    <Compile Include="Models\LogShowModel.cs" />
+    <Compile Include="Models\LogGridModel.cs" />
+    <Compile Include="Models\SubscriptionEditModel.cs" />
+    <Compile Include="Models\FriendLinkEditModel.cs" />
+    <Compile Include="Models\FriendLinkShowModel.cs" />
+    <Compile Include="Models\PortfolioEditModel.cs" />
+    <Compile Include="Models\PortfolioShowModel.cs" />
+    <Compile Include="Models\ServiceEditModel.cs" />
+    <Compile Include="Models\ServiceShowModel.cs" />
+    <Compile Include="Models\SocialNetworkEditModel.cs" />
+    <Compile Include="Models\SocialNetworkShowModel.cs" />
+    <Compile Include="Models\TagEditModel.cs" />
+    <Compile Include="Models\TagShowModel.cs" />
+    <Compile Include="Models\TestimonialEditModel.cs" />
+    <Compile Include="Models\TestimonialShowModel.cs" />
+    <Compile Include="Models\UserEditModel.cs" />
+    <Compile Include="Models\UserShowModel.cs" />
+    <Compile Include="Models\UserSummaryModel.cs" />
+    <Compile Include="Models\TeamMemberEditModel.cs" />
+    <Compile Include="Models\TeamMemberSummaryModel.cs" />
+    <Compile Include="Models\EntryEditModel.cs" />
+    <Compile Include="Models\EntryShowModel.cs" />
+    <Compile Include="Models\EntrySummaryModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\OpenIdLoginModel.cs" />
+    <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="Models\TeamMemberShowModel.cs" />
+    <Compile Include="OffWebsiteModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeBase.Off.Core\CodeBase.Off.Core.csproj">
+      <Project>{7C11B64E-68E4-48B6-9801-E5428A10E993}</Project>
+      <Name>CodeBase.Off.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.Infrastructure\CodeBase.Common.Infrastructure.csproj">
+      <Project>{0E08C874-E030-4C0D-A0E1-6B1996186EF5}</Project>
+      <Name>CodeBase.Common.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.PackageInfo\CodeBase.Common.PackageInfo.csproj">
+      <Project>{3028148D-D9D4-4815-9436-66A4B6ECFA90}</Project>
+      <Name>CodeBase.Common.PackageInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CodeBase.Common.Web\CodeBase.Common.Web.csproj">
+      <Project>{782D310E-E64C-4FCF-AFDE-EFB321BB971E}</Project>
+      <Name>CodeBase.Common.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cdn\Less\Web.config" />
+    <Content Include="Cdn\Scripts\Web.config" />
+    <Content Include="Cdn\Templates\Page-One\Less\Web.config" />
+    <Content Include="Cdn\Templates\Page-One\Scripts\Web.config" />
+    <Content Include="Quartz.config" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\_MemberDetailsBox.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Carousels\_Home.cshtml" />
+    <Content Include="Views\Blog\Entries.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Portfolio\_List.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Services\_List.cshtml" />
+    <Content Include="Views\Shared\Layouts\_DefaultLayout.cshtml" />
+    <Content Include="Views\Shared\Partials\_BackTo.cshtml" />
+    <Content Include="Views\Shared\Partials\_Footer.cshtml" />
+    <Content Include="Views\Widgets\_GoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\Partials\_Header.cshtml" />
+    <Content Include="Views\Shared\Partials\_Metas.cshtml" />
+    <Content Include="Views\FriendLinks\_Cloud.cshtml" />
+    <Content Include="Views\Shared\Partials\_Nav.cshtml" />
+    <Content Include="Views\SocialNetworks\_Cloud.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Yekan.eot" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Yekan.ttf" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Yekan.woff" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Titr.eot" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Titr.ttf" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Titr.woff" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Farnaz.eot" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Farnaz.ttf" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Farnaz.woff" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Koodak.eot" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Koodak.ttf" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Koodak.woff" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Mehr.eot" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Mehr.ttf" />
+    <Content Include="Cdn\Templates\Page-One\Fonts\Mehr.woff" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Testimonials\_Cloud.cshtml" />
+    <Content Include="Views\About\Show.cshtml" />
+    <Content Include="Views\About\_Members.cshtml" />
+    <Content Include="Views\About\_MemberResume.cshtml" />
+    <Content Include="Cdn\Resumes\1347386571.pdf" />
+    <Content Include="Views\About\_AboutLayout.cshtml" />
+    <Content Include="Views\Contact\_ContactDetails.cshtml" />
+    <Content Include="Views\Shared\Partials\_Notifications.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Newsletters\_Subscrib.cshtml" />
+    <Content Include="Views\Newsletters\Subscrib.cshtml" />
+    <Content Include="Views\Blog\_Entries.cshtml" />
+    <Content Include="Views\Tags\_Cloud.cshtml" />
+    <Content Include="Views\Blog\_TagsListLink.cshtml" />
+    <Content Include="Views\Shared\Layouts\_MailLayout.cshtml" />
+    <Content Include="Views\NewslettersMailer\PrepareSubscribConfirmation.cshtml" />
+    <Content Include="Views\ContactMailer\PrepareUserMessage.cshtml" />
+    <Content Include="Views\EntriesMailer\PrepareEntry.cshtml" />
+    <Content Include="Views\Blog\ByAuthor.cshtml" />
+    <Content Include="Views\Blog\_BlogLayout.cshtml" />
+    <Content Include="Views\Blog\ByTag.cshtml" />
+    <Content Include="Views\Users\_Cloud.cshtml" />
+    <Content Include="Views\Shared\Layouts\_AbstractLayout.cshtml" />
+    <Content Include="Views\Shared\Partials\_Breadcrumbs.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Week.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Search.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Month.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime-Local.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Color.cshtml" />
+    <Content Include="Views\Blog\ByDate.cshtml" />
+    <Content Include="Views\Shared\Partials\NoMatch.cshtml" />
+    <Content Include="Views\Shared\Partials\NoRecord.cshtml" />
+    <Content Include="Views\Shared\Partials\NoMore.cshtml" />
+    <Content Include="Views\Blog\_Archive.cshtml" />
+    <Content Include="Views\Blog\Show.cshtml" />
+    <Content Include="Views\About\_MemberMetas.cshtml" />
+    <Content Include="Cdn\Templates\Page-One\Less\Popover.less" />
+    <Content Include="Cdn\Templates\Page-One\Less\Tooltip.less" />
+    <Content Include="Views\Shared\DisplayTemplates\PersianDate.cshtml" />
+    <Content Include="Views\Blog\_EntryMetadata.cshtml" />
+    <Content Include="Views\Services\Show.cshtml" />
+    <Content Include="Views\Portfolio\Show.cshtml" />
+    <Content Include="Areas\Management\Views\Web.config" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\OpenId.cshtml" />
+    <Content Include="Views\Services\_ServicesLayout.cshtml" />
+    <Content Include="Views\Portfolio\_PortfolioLayout.cshtml" />
+    <Content Include="Views\Contact\_ContactLayout.cshtml" />
+    <Content Include="Views\Services\_MakeRequest.cshtml" />
+    <Content Include="Views\Portfolio\_MakeRequest.cshtml" />
+    <Content Include="Views\Search\_SearchLayout.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\_Tips.cshtml" />
+    <Content Include="Views\Newsletters\_NewslettersLayout.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\Newsletters\_Info.cshtml" />
+    <Content Include="Views\Newsletters\UnSubscrib.cshtml" />
+    <Content Include="Views\NewslettersMailer\PrepareUnSubscribConfirmation.cshtml" />
+    <Content Include="DataStorage\Web.config" />
+    <Content Include="Views\Home\_HomeLayout.cshtml" />
+    <Content Include="Views\Error\_ErrorLayout.cshtml" />
+    <Content Include="Views\Shared\Layouts\_LayoutBase.cshtml" />
+    <Content Include="Views\Portfolio\List.cshtml" />
+    <Content Include="Views\Services\List.cshtml" />
+    <Content Include="Views\Services\_ServiceDetailsBox.cshtml" />
+    <Content Include="Views\Services\ServiceDetailsBox.cshtml" />
+    <Content Include="Views\Portfolio\_PortfolioDetailsBox.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioDetailsBox.cshtml" />
+    <Content Include="Views\Blog\_EntrySummaryMetadata.cshtml" />
+    <Content Include="Views\Blog\_EntryDetailsBox.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Management\Models\" />
+    <Folder Include="Areas\Management\Views\Shared\" />
+    <Folder Include="Cdn\Fonts\" />
+    <Folder Include="Cdn\Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14377</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13055/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://www.codebase.ir/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

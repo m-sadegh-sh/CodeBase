@@ -1,0 +1,50 @@
+﻿{
+	"BlogId": "Blog-CodePress-Ir",
+	"Heading": "کدبیس.آی‌آر",
+	"Tagline": "پیاده‌سازی برنامه‌های تحت وب",
+	"Crossbar": "",
+	"Template": "Page-One",
+	"PageSize": "10",
+	"DefaultTimeZoneId": "Iran Standard Time",
+	"AllowUsersToSetTimeZone": "True",
+	"Admins":
+	[
+		"1"
+	],
+	"ContactForm":
+	{
+		"RecipientName": "CodePress Blog Admin",
+		"RecipientEmail": "contact@codepress.ir",
+		"Subject": "پیام ارسالی از طریق فرم تماس با من"
+	},
+	"Cloud":
+	{
+		"ConsumerKey": "iq265px5lqxn9i1",
+		"ConsumerSecret": "bf6ofi35qoe0zb9",
+		"UserName": "m.sadegh.sh@gmail.com",
+		"Password": "01091991",
+		"BackupFolder": "Backups/Blog.CodePress.Ir/"
+	},
+	"Seo":
+	{
+		"CdnUrl": "/Cdn/",
+		"ImagesPath": "Images/",
+		"LessPath": "Less/",
+		"StylesPath": "Styles/",
+		"ScriptsPath": "Scripts/",
+		"FontsPath": "Fonts/",
+		"DefaultTitle": "کدبیس.آی‌آر",
+		"DefaultKeywords": "کدبیس، طراحی، توسعه، برنامه نویسی، وب، دیزاین، دولوپ، ASP.NET, Webforms, MVC, Sql Server, jQuery, Css, Css3, Html, Html5, JavaScript.",
+		"DefaultDescription": "وب‌سایت تیم کدبیس.آی‌آر، پیاده‌سازی برنامه‌های تحت وب، طراحی وب‌سایت و ...",
+		"TitleSeparator": " - ",
+		"BreadcrumbSeparator": "<",
+		"GoogleAnalyticsId": "",
+	},
+	"SocialNetwork":
+	{
+		"Facebook": "@SadeghShad",
+		"GooglePlus": "@SadeghShad",
+		"Twitter": "@SadeghShad",
+		"LinkedIn": "@SadeghShad",
+	}
+}

@@ -1,0 +1,191 @@
+.content-wrap {
+    margin: 0 auto;
+    width: 940px;
+    padding: 100px 0 0;
+}
+
+.content-wrap p a {
+    padding: 0 8px;
+	background-color: rgba(32, 32, 32, .08);
+}
+
+    .content-wrap section {
+        position: relative;
+    }
+
+        .content-wrap section section {
+            background: none;
+            margin: 0;
+        }
+
+    .box {
+        .box-shadow(#BBB 0px 0px 5px);
+        background: #E7E7E7;
+        border: solid 15px white;
+    }
+
+    .content-wrap .fancy-box {
+        .box-shadow(-4px 4px 0px rgba(0, 0, 0, .2));
+        background: @boxBackgroundColor;
+        padding: 20px;
+        margin: 20px;
+    }
+
+        .content-wrap .fancy-box:first-child {
+            margin-top: 0;
+        }
+
+        .content-wrap .fancy-box:last-child {
+            margin-bottom: 0;
+        }
+
+    .content-wrap .fancy-title {
+        margin-right: -25px;
+        padding: 0 13px 0 10px;
+        .box-shadow(4px 4px 0 rgba(0, 0, 0, .2));
+        line-height: 32px;
+        background: darken(@boxBackgroundColor, 15%);
+    }
+
+    .content-wrap a.more {
+        float: left;
+		padding: 0 16px;
+		background-color: rgba(32, 32, 32, .08);
+    }
+
+    .content-wrap a.more:hover {
+		background-color: rgba(32, 32, 32, .16);
+    }
+
+
+    .content-wrap section .row {
+        clear: both;
+        margin-bottom: 25px;
+    }
+
+        .content-wrap section .row.no-bottom-margin {
+            margin-bottom: 0;
+        }
+
+        .content-wrap section .row .col {
+            float: right;
+            margin: 0;
+            padding: 0;
+            width: 290px;
+        }
+
+            .content-wrap section .mid, .content-wrap section .row .col.mid {
+                margin-left: 35px;
+                margin-right: 35px;
+            }
+
+    .content-wrap section .primary {
+        float: right;
+        width: 620px;
+    }
+
+    .content-wrap section h1 span.metadata {
+        color: gray;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 20px;
+        position: relative;
+        top: -6px;
+    }
+
+    .content-wrap section p.intro {
+        margin: 15px 0 25px 0;
+    }
+    .content-wrap section p.intro.no-top-margin {
+        margin-top: 0;
+    }
+	
+    .content-wrap section.services h2 {
+        margin-top: 0;
+    }
+
+    .content-wrap section .primary div.large-thumbnail {
+        float: left;
+        margin-right: 12px;
+    }
+
+    .content-wrap section .primary div.large-thumbnail img.member-image {
+        .image('team-members/default-image.png');
+		width:200px;
+		height:188px;
+    }
+
+    .content-wrap section aside {
+        float: left;
+        width: 300px;
+    }
+
+        .content-wrap section aside h3 {
+            margin: 0 0 12px 0;
+        }
+
+        .content-wrap section aside ul.link-list {
+            font-size: 16px;
+            list-style: none;
+            margin: 0 0 25px 0;
+            padding: 0;
+        }
+
+        .content-wrap section aside ul:last-child, .content-wrap section aside ol:last-child {
+            margin: 0;
+        }
+
+        .content-wrap section aside ul.link-list li a {
+            color: #3B3B3B;
+            display: block;
+            padding: 3px 9px;
+        }
+
+            .content-wrap section aside ul.link-list li a:hover,
+            .content-wrap section aside ul.link-list li a:focus,
+            .content-wrap section aside ul.link-list li a:active {
+                color: #285935;
+            }
+
+            .content-wrap section aside ul.link-list li a:hover {
+                background-color: rgba(32, 32, 32, 0.08);
+            }
+
+        .content-wrap section aside .testimonials blockquote {
+            .templateImage('quote-open.png', no-repeat right 5px);
+            font-size: 14px;
+            font-style: italic;
+            margin: 12px 0;
+            padding-right: 25px;
+            padding-left: 10px;
+        }
+
+            .content-wrap section aside .testimonials blockquote:last-child {
+                margin: 0;
+            }
+
+            .content-wrap section aside .testimonials blockquote p {
+                margin-bottom: 0;
+            }
+
+            .content-wrap section aside .testimonials blockquote cite {
+                font-size: 11px;
+                font-style: normal;
+                text-transform: uppercase;
+            }
+
+    .content-wrap section .back-to-top {
+        .templateImage('back-to-top.png');
+        bottom: -65px;
+        display: block;
+        height: 43px;
+        position: absolute;
+        left: 10px;
+        text-indent: -9999px;
+        width: 43px;
+        z-index: @zindexBackToTop;
+    }
+
+.ie7 .content-wrap section .back-to-top {
+    bottom: -70px;
+}

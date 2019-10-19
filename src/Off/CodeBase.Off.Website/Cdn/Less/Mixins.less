@@ -1,0 +1,80 @@
+.image(@relativePath) {
+	background: url('@{imagesPath}@{relativePath}');
+}
+.templateImage(@relativePath) {
+	background: url('@{templateImagesPath}@{relativePath}');
+}
+
+.image(@relativePath, @options) {
+	background: url('@{imagesPath}@{relativePath}') @options;
+}
+.templateImage(@relativePath, @options) {
+	background: url('@{templateImagesPath}@{relativePath}') @options;
+}
+
+.image(@color, @relativePath, @options) {
+	background: @color url('@{imagesPath}@{relativePath}') @options;
+}
+.templateImage(@color, @relativePath, @options) {
+	background: @color url('@{templateImagesPath}@{relativePath}') @options;
+}
+
+.font(@fontFamily, @fontName) {
+	font-family: @fontFamily;
+	src: url('@{fontsPath}@{fontName}.eot');
+    src: url('@{fontsPath}@{fontName}.eot?#iefix') format('embedded-opentype'),
+         url('@{fontsPath}@{fontName}.woff') format('woff'),
+         url('@{fontsPath}@{fontName}.ttf') format('truetype'),
+         url('@{fontsPath}@{fontName}.svg#@{fontFamily}') format('svg');
+}
+.templateFont(@fontFamily, @fontName) {
+	font-family: @fontFamily;
+	src: url('@{templateFontsPath}@{fontName}.eot');
+    src: url('@{templateFontsPath}@{fontName}.eot?#iefix') format('embedded-opentype'),
+         url('@{templateFontsPath}@{fontName}.woff') format('woff'),
+         url('@{templateFontsPath}@{fontName}.ttf') format('truetype'),
+         url('@{templateFontsPath}@{fontName}.svg#@{fontFamily}') format('svg');
+}
+
+.opacity(@opacity) {
+    -moz-opacity: @opacity / 100;
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+.outline(@outline) {
+    -moz-outline: @outline;
+    outline: @outline;
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.text-shadow(@shadow) {
+    -webkit-text-shadow: @shadow;
+    text-shadow: @shadow;
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.box-shadow(@shadow1, @shadow2) {
+  -webkit-box-shadow: @shadow1, @shadow2;
+  -moz-box-shadow: @shadow1, @shadow2;
+  box-shadow: @shadow1, @shadow2;
+}
+
+.linear-gradient(@step1, @step2, @step3, @step4){
+	background: -moz-linear-gradient(top, @step1 0%, @step2 50%, @step3 50%, @step4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @step1), color-stop(50%, @step2), color-stop(50%, @step3), color-stop(100%, @step4));
+    background: -webkit-linear-gradient(top, @step1 0%, @step2 50%, @step3 50%, @step4 100%);
+    background: -o-linear-gradient(top, @step1 0%, @step2 50%, @step3 50%, @step4 100%);
+    background: -ms-linear-gradient(top, @step1 0%, @step2 50%, @step3 50%, @step4 100%);
+    background: linear-gradient(top, @step1 0%, @step2 50%, @step3 50%, @step4 100%);
+}

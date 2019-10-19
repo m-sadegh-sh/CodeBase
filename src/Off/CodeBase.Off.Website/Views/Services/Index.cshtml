@@ -1,0 +1,18 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("خدمات");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+
+<section class="services clearfix">
+    <h1>چه کمکی از دستمون بر میاد؟</h1>
+    @Html.Partial("_Services")
+    @Html.Partial("Partials/_BackTo")
+</section>

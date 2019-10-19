@@ -1,0 +1,26 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc.Layout
+@using CodeBase.Common.Web.UI
+@using CodeBase.Off.Core.Domain
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+    var currentConfig = IoC.Get<Config>();
+
+    var breadcrumbs = layout.GetBreadcrumbs();
+}
+<ul class="breadcrumb">
+    @for (var i = 0; i < breadcrumbs.Count; i++) {
+        var breadcrumb = breadcrumbs[i];
+        var isLastItem = Html.IsLastItem(i,
+                                         breadcrumbs.Count);
+
+        <li>
+            @breadcrumb
+
+            @if (!isLastItem) {
+                <span class="divider">@currentConfig.Seo.BreadcrumbSeparator</span>
+            }
+        </li>
+    }
+    <div class="clearfix"></div>
+</ul>

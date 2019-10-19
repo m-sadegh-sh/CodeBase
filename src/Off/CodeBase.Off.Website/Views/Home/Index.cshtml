@@ -1,0 +1,21 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("طراحی و پیاده‌سازی برنامه های تحت وب");
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+<section class="home clearfix">
+    <h1>به کدبیس خوش آمدید.</h1>
+    <div class="clearfix">
+        @Html.Partial("_Intro")
+        @{ Html.RenderAction("Carousels", "Widgets"); }
+    </div>
+    @{ Html.RenderAction("RecentEntries", "Blog"); }
+    @Html.Partial("Partials/_BackTo")
+</section>

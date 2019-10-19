@@ -1,0 +1,42 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@{
+    Layout = "~/Views/Shared/Layouts/_LayoutBase.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle("نوشته‌ها");
+    layout.AddBreadcrumb(Html.ActionLink("نوشته‌ها",
+                                         "Index",
+                                         "Blog",
+                                         CurrentMode.All));
+}
+@section Metas
+{
+    @RenderSection("Metas",
+                   false)
+}
+<section class="blog clearfix">
+    @RenderBody()
+    <aside>
+        @{ Html.RenderAction("List",
+                             "Users",
+                             new {
+                                     IsLight = true
+                             }); }
+        @{ Html.RenderAction("List",
+                             "Tags",
+                             new {
+                                     IsLight = true
+                             }); }
+        @{ Html.RenderAction("Archive",
+                             "Blog",
+                             new {
+                                     IsLight = true
+                             }); }
+        @{ Html.RenderAction("Subscrib",
+                             "Newsletters"); }
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

@@ -1,0 +1,24 @@
+﻿<h2>آخرین نوشته‌ها.</h2>
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@if (Model.Any()) {
+    <div class="row clearfix no-bottom-margin">
+        @for (int i = 0; i < Model.Count; i++) {
+            var entry = Model[i];
+            <section class="col">
+                <h3>
+                    @Html.ActionLink(entry.Title, "Show", "Entry", new {
+                        entry.Slug
+                    }, null)
+                </h3>
+                <p>
+                    @entry.PrettyCreateDate
+                </p>
+                @Html.ActionLink("» ادامه", "Show", "Entry", new {
+                    entry.Slug
+                }, new {
+                    @class = "more"
+                })
+            </section>
+        }
+    </div>
+}

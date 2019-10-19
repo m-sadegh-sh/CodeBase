@@ -1,0 +1,17 @@
+{
+  "Id": 1347997455,
+  "Level": 3,
+  "LogDateUtc": "2012-09-18T19:44:15.7991378Z",
+  "RawUrl": "/subscrib",
+  "ReferrerUrl": "http://localhost:13055/blog",
+  "IpInfo": "Remote: ::1, Local: 2001:0:9d38:953c:10c4:2b9b:d19b:83bf",
+  "Params": {
+    "__RequestVerificationToken": "ztuDTZ9rJpRaOFVz-Q5jT0tOtJ3IrqBtYxB7O8dH7o1aUx5Y8stpYUanzqwaNVeqiqMGr0btcZZChp8stbTtBlmvu4okwG-Thmf8R-Ii42o1,LPE5yr-EzWcAxE3ZLvRw9LuM9PkZ-exiPK3cyhWG5HnhIMr-dV3E3whnsgp3Oj9IEDy5-WRQIyl8A1Tp8ELDSg7_RXsP0Z4A-O52vBoYhck1",
+    "ASP.NET_SessionId": "lwmk2aopkzlzrlayscrlx3if",
+    "Email": "m@gg.gg"
+  },
+  "Action": null,
+  "UserInfo": "--- (---)",
+  "Message": "An error occured when sending a message",
+  "Exception": "Message: A recipient must be specified.\r\nSource: System\r\nTargetSite: Void Send(System.Net.Mail.MailMessage)\r\nStackTrace:    at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at CodeBase.Off.Core.Utilities.MessageService.SendEmail(MailMessage message) in d:\\Projects\\CodeBase\\Off\\CodeBase.Off.Core\\Utilities\\MessageService.cs:line 17\r\n"
+}

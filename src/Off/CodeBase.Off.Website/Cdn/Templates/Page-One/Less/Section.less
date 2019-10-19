@@ -1,0 +1,119 @@
+section h1 {
+    background: @boxBackgroundColor;
+    padding: 0 10px 2px;
+    border-right: solid 5px;
+    margin-right: -5px;
+    margin-bottom: 25px;
+}
+
+section.home .intro-box {
+    float: right;
+    width: 360px;
+}
+
+    section.home .intro-box p.intro:first-child, section .primary p.intro:first-child {
+        margin-top: 0;
+    }
+
+section.home .row .col h2 {
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+section.home .row p, section.services .row p {
+    margin-bottom: 10px;
+    min-height: 85px;
+}
+
+section.services .row .col img.align-right {
+    margin-left: 12px;
+    margin-top: 13px;
+}
+
+section.portfolio ul.folio-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 970px;
+}
+
+    section.portfolio ul.folio-list li {
+        float: right;
+        margin: 10px 0 0 29px;
+        width: 294px;
+    }
+
+        section.portfolio ul.folio-list li h4.title {
+            position: relative;
+            top: -44px;
+            right: 15px;
+            width: 264px;
+            margin-bottom: -10px;
+            padding: 2px 0;
+            background-color: rgba(0, 0, 0, .07);
+            text-align: center;
+        }
+
+        section.portfolio ul.folio-list li.no-bottom-margin h4.title {
+            margin-bottom: -29px;
+        }
+
+section.about-us .primary .row .first {
+    margin-left: 35px;
+}
+
+section.about-us .primary p.bio {
+    min-height: 220px;
+}
+
+section.about-us ul.team-members {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    section.about-us ul.team-members li {
+        float: right;
+        width: 290px;
+    }
+
+        section.about-us ul.team-members li.odd {
+            margin-left: 35px;
+        }
+
+        section.about-us ul.team-members li a {
+            background: none;
+            color: white;
+            .text-shadow(-1px 1px 0 #185523);
+        }
+
+            section.about-us ul.team-members li a:hover {
+                text-decoration: underline;
+            }
+
+        section.about-us ul.team-members li .thumbnail {
+            float: right;
+            margin-left: 12px;
+        }
+
+        section.about-us ul.team-members li .thumbnail img.member-thumb {
+            .image('team-members/default-thumb.png');
+			height:78px;
+			width:83px;
+        }
+
+        section.about-us ul.team-members li p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 5px 0 0 0;
+        }
+
+            section.about-us ul.team-members li p.name {
+                font: 16px @altHeadingFontFamily;
+                margin: 10px 0 0 0;
+                background: rgba(4, 100, 22, 0.50);
+            }
+
+            section.about-us ul.team-members li p.position {
+                color: gray;
+            }

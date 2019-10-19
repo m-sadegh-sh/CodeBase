@@ -1,0 +1,85 @@
+.alerts {
+
+    .alert {
+        font-size: 14px;
+        padding: 10px 40px 5px 35px;
+        margin-bottom: 16px;
+        .text-shadow(0 1px 0 rgba(255,255,255,.5));
+        .border-radius(4px);
+        border: solid 1px;
+        .templateImage("Notifications.png", no-repeat right 0);
+
+        h4 {
+            display: inline-block;
+        }
+
+        .close {
+            position: relative;
+            top: 2px;
+            left: -21px;
+            line-height: 16px;
+            float: left;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            .text-shadow(0 1px 0 white);
+            .opacity(20);
+
+            &:hover {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+                .opacity(40);
+            }
+        }
+
+        button.close {
+            padding: 0;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            -webkit-appearance: none;
+        }
+
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+
+    .alert-block h4 {
+        margin: 0 0 5px 0;
+    }
+
+    .alert-block > p,
+    .alert-block > ul {
+        margin-bottom: 0;
+    }
+
+    .alert-info {
+        background-position-y: 13px;
+        background-color: rgba(58, 135, 173, 0.20);
+        border-color: rgba(58, 135, 173, 0.45);
+        color: #3a87ad;
+    }
+
+    .alert-success {
+        background-color: rgba(70, 136, 71, 0.20);
+        border-color: rgba(70, 136, 71, 0.45);
+        color: #468847;
+        background-position-y: -103px;
+    }
+
+    .alert-warning {
+        background-color: rgba(192, 152, 83, 0.20);
+        border-color: rgba(192, 152, 83, 0.45);
+        color: #c09853;
+        background-position-y: -219px;
+    }
+
+    .alert-error {
+        background-color: rgba(185, 74, 72, 0.15);
+        border-color: rgba(185, 74, 72, 0.45);
+        color: #b94a48;
+        background-position-y: -335px;
+    }
+}

@@ -1,0 +1,19 @@
+﻿@model IList<CodeBase.Off.Website.Models.TagShowModel>
+@if (Model.Any()) {
+    <section class="fancy-box">
+        <h3 class="fancy-title">تگ‌ها</h3>
+        <ul class="link-list">
+            @foreach (var tag in Model) {
+                <li>@Html.ActionLink(string.Format("{0} ({1})",
+                                                   tag.Title,
+                                                   tag.EntriesCount),
+                                     "ByTag",
+                                     "Blog",
+                                     new {
+                                             tag.Slug
+                                     },
+                                     null)</li>
+            }
+        </ul>
+    </section>
+}

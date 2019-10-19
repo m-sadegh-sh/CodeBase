@@ -1,0 +1,23 @@
+﻿@model CodeBase.Off.Core.Domain.Subscription
+
+@{
+    var confirmationUrl = Url.Abs(Url.Action("SubscribConfirmation",
+                                             "Subscriptions",
+                                             new {
+                                                     Model.Guid
+                                             },
+                                             null));
+}
+
+<p>با تشکر ازت واسه عضویت در خبرنامه کدبیس، برای فعال‌سازی اشتراکت
+    روی این 
+    <a href="@confirmationUrl">لینک</a>
+    کلیک کن و یا از آدرس ذیل استفاده کن.
+</p>
+<p>
+    لینک فعال‌سازی اشتراک: @confirmationUrl
+</p>
+<p>
+    در صورتی که این درخواست رو خودت ارسال نکردی این ایمیل رو نادیده بگیر.
+    این در خواست ظرف 72 ساعت پس از ارسال، اگر تائید نشه به طور خودکار از لیست ما حذف میشه.
+</p>

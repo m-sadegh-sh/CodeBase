@@ -1,0 +1,15 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@model IList<CodeBase.Off.Website.Models.EntrySummaryModel>
+@{
+    Layout = "_BlogLayout.cshtml";
+
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.SetCanonicalUrl(Url.Action());
+}
+<h1>نوشته‌های تیم کدبیس...</h1>
+<section class="primary">
+    @{ Html.RenderAction("RecentEntries"); }
+</section>

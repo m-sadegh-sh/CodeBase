@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "_AboutLayout.cshtml";
+}
+<section class="about-us clearfix">
+    <h1>ما که هستیم؟!؟!!</h1>
+    @Html.Partial("_InDepth")
+    <aside>
+        @{ Html.RenderAction("FriendLinks", "Widgets"); }
+        @{ Html.RenderAction("Testimonials", "Widgets"); }
+    </aside>
+    @Html.Partial("Partials/_BackTo")
+</section>

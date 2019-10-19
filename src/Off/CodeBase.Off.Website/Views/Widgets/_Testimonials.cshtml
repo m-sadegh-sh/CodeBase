@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CodeBase.Off.Core.Domain.Testimonial>
+
+@if (Model.Any()) {
+    <div class="fancy-box">
+        <h3 class="fancy-title">ذهنیت شما از ما</h3>
+        <div class="testimonials">
+            @foreach (var testimonial in Model) {
+                <blockquote>
+                    <p>
+                        @testimonial.Text
+                    </p>
+                    <cite>&mdash; @Html.ActionLink(testimonial.FriendlyName, "RedirectToTestimonial", new {
+                                      testimonial.Slug
+                                  })</cite>
+                </blockquote>
+            }
+        </div>
+    </div>
+}

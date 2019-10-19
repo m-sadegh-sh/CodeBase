@@ -1,0 +1,19 @@
+﻿@using CodeBase.Common.Infrastructure.DependencyResolution
+@using CodeBase.Common.Web.Mvc
+@using CodeBase.Common.Web.Mvc.Layout
+@model CodeBase.Off.Website.Models.ErrorModel
+@{
+    var layout = IoC.Get<ILayoutHelpers>();
+
+    layout.AddTitle(Model.Heading);
+    layout.AddKeywords("");
+    layout.AddDescription("");
+    layout.AddCanonicalUrl(Url.Action());
+    layout.AddBreadcrumb(() => Html.Action());
+}
+<h1>اوه اوه اوه! چی شد؟</h1>
+<div class="row">
+    <p class="intro">
+        @Model.Message
+    </p>
+</div>
